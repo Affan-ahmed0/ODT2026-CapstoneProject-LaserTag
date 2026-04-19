@@ -4,7 +4,7 @@
 
 **📌 Project Overview**
 
-A Multiplayer Game of ***Laser Tag***. where players shit each other with a gun that shoots lasers to kill the other player.
+A Multiplayer Game of ***Laser Tag***. Where players shoot each other with a gun that shoots lasers to kill the other player.
 
 
 
@@ -28,6 +28,6 @@ Project Documents → Design thinking, planning, testing
 Media → Weekly progress and final output
 
 
-**👥 Team Members**
+**👥 Team Members**  
 Anushka Kulkarni  
 Affan Ahmed
