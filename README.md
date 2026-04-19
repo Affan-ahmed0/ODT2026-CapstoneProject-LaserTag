@@ -1,10 +1,10 @@
 **Project Title**
 
-[Enter your project name here]
+[Laser Tag]
 
 **📌 Project Overview**
 
-[Provide a short description of your project]
+[A ]
 
 
 **📂 Repository Structure**
@@ -28,4 +28,5 @@ Media → Weekly progress and final output
 
 
 **👥 Team Members**
-[Name]
+[Anushka Kulkarni
+Affan Ahmed]
