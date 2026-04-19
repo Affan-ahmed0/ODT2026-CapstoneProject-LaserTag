@@ -26,9 +26,9 @@
 | :--- | :--- | :--- |
 | **ESP32 Microcontroller** | Central processing and logic unit. | High clock speed for precise IR pulse timing and built-in Wi-Fi/Bluetooth for future scoring sync. |
 | **Laser Dot Diode (650nm)** | Visual aiming reference. | Provides a clear, visible point of impact for the player without interfering with the IR data stream. |
-| **IR Emitter LED** | Data transmitter. | Operates at a 940nm wavelength, allowing for discrete, high-speed data transmission invisible to the human eye. |
-| **IR Receiver LED** | Signal detection. | A lightweight, low-cost solution for capturing incoming IR pulses for software-based demodulation. |
-| **0.96" OLED Display** | Real-time Head-Up Display (HUD). | Provides essential game telemetry (health, ammo, team) in a compact, low-power I2C form factor. |
+| **IR Emitter LED | PIN 18 (RMT)** | Data transmitter. | Operates at a 940nm wavelength, allowing for discrete, high-speed data transmission invisible to the human eye. |
+| **IR Receiver LED | PIN 19 (IRQ)** | Signal detection. | A lightweight, low-cost solution for capturing incoming IR pulses for software-based demodulation. |
+| **0.96" OLED Display | PIN 21 (SLC) PIN 21 (SDA) ** | Real-time Head-Up Display (HUD). | Provides essential game telemetry (health, ammo, team) in a compact, low-power I2C form factor. |
 | **Active Buzzer** | Audio feedback system. | Low-latency audible alerts for "hits" and "firing," essential for situational awareness during play. |
 | **3-Stage Slide Switch** | Power and state control. | Offers a physical "Safety" or "Off" state, preventing accidental battery drain and accidental firing. |
 | **Push Button (Trigger)** | Input for firing action. | Provides tactile feedback for the user and is easily integrated with ESP32 GPIO interrupts. |
