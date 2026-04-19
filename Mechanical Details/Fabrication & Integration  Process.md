@@ -6,7 +6,7 @@
 The shell of the object was 3D Printed to house all the components internally, excluding the IR Reciever. 3D Printing was used to deliver the precision required to place all the components in the preferred position in one cohesive shell. 
 It houses the Battery, Buzzer, Slide Switch, OLED and the IR Emmiter.
 
-#Assembly Steps:
+# Assembly Steps:
 [] 3D Model the Shell
 [] 3D Print in 2 halves
 [] Join Halves
