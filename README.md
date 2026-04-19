@@ -30,6 +30,7 @@ The gun uses IR signals as the communication between the devices when one player
 5. Media
 
 
+  
 
 **⚙️ How to Navigate This Repository**
 
@@ -55,6 +56,8 @@ Media → Weekly progress and final output
 
 
 
+
+    
 
 
 **👥 Team Members**  
