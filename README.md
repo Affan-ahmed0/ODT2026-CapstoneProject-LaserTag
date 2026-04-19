@@ -1,10 +1,12 @@
 **Project Title**
 
-[Laser Tag]
+Laser Tag
 
 **📌 Project Overview**
 
-[A ]
+A 
+Scalable
+
 
 
 **📂 Repository Structure**
@@ -28,5 +30,5 @@ Media → Weekly progress and final output
 
 
 **👥 Team Members**
-[Anushka Kulkarni
-Affan Ahmed]
+Anushka Kulkarni  
+Affan Ahmed
