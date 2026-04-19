@@ -4,8 +4,7 @@ Laser Tag
 
 **📌 Project Overview**
 
-A 
-Scalable
+A Multiplayer Game of ***Laser Tag***. where players shit each other with a gun that shoots lasers to kill the other player.
 
 
 
