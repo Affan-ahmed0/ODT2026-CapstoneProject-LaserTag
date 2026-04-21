@@ -2,10 +2,6 @@
 
 **Laser Dot Diode Module:** Acts as visual aid for player to know where they are shooting  
 
-**Infrared Emmiter LED:** Sends a IR Signal  
-
-**Infrared Reciever LED:** Recieves the IR Signal  
-
 **ESP32:** Used for computing the signals, giving outputs and Wireless communication between ESP32's  
 
 **OLED Display:** Displays information to the Player.  
@@ -26,8 +22,6 @@
 | :--- | :--- | :--- |
 | **ESP32 Microcontroller** | Central processing and logic unit. | Processing of signals from sensors and built-in Wi-Fi/Bluetooth for future scoring sync. |
 | **Laser Dot Diode (650nm)** | Visual aiming reference. | Provides a clear, visible point of impact for the player without interfering with the IR data stream. |
-| **IR Emitter LED [PIN 18 (RMT)]** | Data transmitter. | Operates at a 940nm wavelength, allowing for discrete, high-speed data transmission invisible to the human eye. |
-| **IR Receiver LED [PIN 19 (IRQ)]** | Signal detection. | Capturing incoming IR pulses for software-based demodulation. |
 | **0.96" OLED Display [PIN 21 (SLC) PIN 21 (SDA)]** | Real-time Head-Up Display (HUD). | Provides essential game telemetry (health, ammo, team) in a compact, low-power I2C form factor. |
 | **Active Buzzer** | Audio feedback system. | Low-latency audible alerts for "hits" and "firing," essential for situational awareness during play. |
 | **3-Stage Slide Switch** | Power and state control. | Switches between Connecting mode to connect between the ESP's in a room and Play mode |
