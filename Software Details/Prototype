@@ -1,0 +1,76 @@
+from machine import Pin, I2C
+import ssd1306
+import framebuf
+import time
+import screen
+import asyncio
+
+# Now you can define it simply:
+i2c = I2C(scl=Pin(19), sda=Pin(21))
+display = ssd1306.SSD1306_I2C(128, 64, i2c)
+
+lz = Pin(32, Pin.OUT)
+ldr = Pin(15, Pin.IN, Pin.PULL_UP)
+pb = Pin(14, Pin.IN, Pin.PULL_UP)
+
+# GAME VARIABLES & TRACKING
+ammo = 10
+lives = 5
+hits = 0
+misses = 0
+last_button_state = 1
+
+# MAIN GAME LOOP
+async def main_game():
+    global lives, ammo, hits, misses, last_button_state
+    
+    await screen.welcome()
+    await screen.getready()
+    await screen.countdown()
+    await screen.stats(lives, ammo, hits, misses)
+    
+    while True:
+        # SHOTS
+        click = pb.value()
+        
+        if click == 0 and last_button_state == 1:
+            # SUFFICIENT AMMO
+            if ammo > 0:
+                lz.on()
+                await asyncio.sleep(0.3)
+                lz.off()
+                ammo = ammo - 1
+                
+                # HIT OR MISS
+                if ldr.value() == 0:
+                    await asyncio.gather(screen.hit(), screen.bzhit())
+                    hits = hits + 1
+                    lives = lives - 1
+                    await screen.life(lives)
+                    
+                    if lives <= 0:
+                        await asyncio.gather(screen.bzend(), screen.lose())
+                        # break
+                
+                elif ldr.value() == 1:
+                    await asyncio.gather (screen.bzmiss(), screen.miss())
+                    misses = misses + 1
+                
+                # SHOW STATS
+                await screen.stats(lives, ammo, hits, misses)
+            
+            # INSUFFICIENT AMMO
+            elif ammo <= 0:
+                await asyncio.gather (screen.cooldown(), screen.bzcool())
+                ammo = 10
+                await screen.countdown()
+                await screen.stats(lives, ammo, hits, misses)
+
+        last_button_state = click
+        await asyncio.sleep(0.05)
+
+# START THE PROGRAM
+try:
+    asyncio.run(main_game())
+except KeyboardInterrupt:
+    print("Game Stopped")
