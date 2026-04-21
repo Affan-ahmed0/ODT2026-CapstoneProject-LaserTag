@@ -1,0 +1,57 @@
+from machine import Pin
+import time
+
+bz = Pin(25, Pin.OUT)
+pb = Pin(14, Pin.IN, Pin.PULL_UP)
+
+async def bzhit():
+    i = 1
+    for i in range(4):
+        bz.on()
+        await asyncio.sleep(0.033)
+        bz.off()
+        await asyncio.sleep(0.033)
+        i = i + 1
+        print(i)
+    bz.on()
+    await asyncio.sleep(0.5)
+    bz.off()
+    await asyncio.sleep(0.5)
+
+async def bzmiss():
+    i = 1
+    for i in range(3):
+        bz.on()
+        await asyncio.sleep(0.033)
+        bz.off()
+        await asyncio.sleep(0.033)
+        i = i + 1
+        print(i)
+
+async def bzend():
+    i = 1
+    for i in range(5):
+        bz.on()
+        await asyncio.sleep(0.5)
+        bz.off()
+        await asyncio.sleep(0.5)
+        i = i + 1
+        print(i)
+        
+async def bzcool():
+    i = 1
+    for i in range(3):
+        bz.on()
+        await asyncio.sleep(0.2)
+        bz.off()
+        await asyncio.sleep(0.8)
+        i = i + 1
+        print(i)
+
+bzcool()
+await asyncio.sleep(2)
+bzmiss()
+await asyncio.sleep(2)
+bzhit()
+await asyncio.sleep(2)
+bzend()
